@@ -25,7 +25,7 @@ proc `[]=`*(ss: var ShortestString, i: int, c: char) {.inline.} =
   set(ss, i, c)
 
 proc len*(ss: ShortestString): int =
-  when false:
+  when true: # likely faster
     # unrolled loop
     {.push rangeChecks: off.}
     template doIndex(i: int) =
